@@ -1,0 +1,12 @@
+export { default as HeroSection } from './hero-section';
+export { default as VideoSection } from './video-section';
+export { default as InfoHighlightSection } from './info-highlight-section';
+export { default as LearnerTypeSection } from './learner-type-section';
+export { default as WhatsIncludedSection } from './whats-included-section';
+export { default as RoadmapSection } from './roadmap-section';
+export { default as GroupCallsSection } from './group-calls-section';
+export { default as CommunitySection } from './community-section';
+export { default as TestimonialsSection } from './testimonials-section';
+export { default as PricingSection } from './pricing-section';
+export { default as FAQSection } from './faq-section';
+export { default as FinalCTASection } from './final-cta-section';
