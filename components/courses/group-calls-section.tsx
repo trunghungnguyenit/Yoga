@@ -90,7 +90,7 @@ export default function GroupCallsSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Lịch coaching nhóm{' '}
+            Lịch tập luyện nhóm{' '}
             <span className="text-green-600">hàng tuần</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">

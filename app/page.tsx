@@ -2,11 +2,10 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import {
   HeroSection,
-  AboutCharlieSection,
-  FeaturesSection,
-  PracticePlanSection,
-  TestimonialsSection,
-  NewsletterSection
+  AboutLuanSection,
+  ClassTypesSection,
+  LocationSection,
+  TestimonialsSection
 } from '@/components/homes';
 
 export default function Home() {
@@ -14,11 +13,10 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Header />
       <HeroSection />
-      <AboutCharlieSection />
-      <FeaturesSection />
-      <PracticePlanSection />
+      <AboutLuanSection />
+      <ClassTypesSection />
+      <LocationSection />
       <TestimonialsSection />
-      <NewsletterSection />
       <Footer />
     </div>
   );
