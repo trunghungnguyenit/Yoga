@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
@@ -18,56 +17,50 @@ export default function HeroSection() {
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Trust Badge */}
           <Badge variant="secondary" className="bg-white/90 text-green-700 px-4 py-2 text-sm font-medium">
-            ⭐ 10.000+ học viên tin tưởng
+            ⭐ Yoga tại nhà - Bình Định
           </Badge>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
-            Khởi đầu hành trình{' '}
-            <span className="text-green-600">Yoga</span>{' '}
-            của bạn cùng Charlie
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            Luận – HLV Yoga tại{' '}
+            <span className="text-green-600">Gác Yoga</span>{' '}
+            (Bình Định)
           </h1>
 
-          {/* Description */}
+          {/* Subheading */}
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Khám phá sức mạnh tiềm ẩn trong bạn qua các chương trình yoga được thiết kế riêng cho mọi trình độ. 
-            Tăng linh hoạt, giảm stress, và xây dựng sự tự tin từng ngày.
+            Yoga cộng đồng – Trị liệu – Nhóm nhỏ
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Link href="/course">
+          {/* Main CTA */}
+          <div className="flex justify-center pt-4">
+            <a 
+              href="https://zalo.me/your-zalo-number" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               <Button 
                 size="lg" 
                 className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                Bắt đầu ngay
+                💬 Chat Zalo – Tư vấn lớp phù hợp
               </Button>
-            </Link>
-            <Link href="/program">
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300"
-              >
-                Xem chương trình
-              </Button>
-            </Link>
+            </a>
           </div>
 
-          {/* Additional Trust Signals */}
+          {/* Quick Info */}
           <div className="flex flex-wrap justify-center items-center gap-6 pt-8 text-sm text-gray-600">
             <div className="flex items-center gap-2">
-              <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>
-              <span>Đánh giá 5 sao</span>
+              <span className="text-green-600">📍</span>
+              <span>Gác Yoga, Bình Định</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Miễn phí 7 ngày đầu</span>
+              <span className="text-green-600">👥</span>
+              <span>Lớp nhóm nhỏ</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Hủy bất kỳ lúc nào</span>
+              <span className="text-green-600">🏠</span>
+              <span>Yoga tại nhà</span>
             </div>
           </div>
         </div>

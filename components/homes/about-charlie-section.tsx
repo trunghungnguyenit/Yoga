@@ -1,8 +1,7 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
-export default function AboutCharlieSection() {
+export default function AboutLuanSection() {
   return (
     <section className="bg-white py-20">
       <div className="max-w-6xl mx-auto px-4">
@@ -13,7 +12,7 @@ export default function AboutCharlieSection() {
               <div className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-green-100 to-orange-100 p-8">
                 <Image
                   src="/Logo-GacYoga.jpg"
-                  alt="Charlie - Giáo viên Yoga"
+                  alt="HLV Luận - Giáo viên Yoga"
                   fill
                   className="object-contain rounded-xl"
                   priority
@@ -30,65 +29,58 @@ export default function AboutCharlieSection() {
             <div className="space-y-4">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 Xin chào, tôi là{' '}
-                <span className="text-green-600">Charlie</span>
+                <span className="text-green-600">Luận</span>
               </h2>
               <p className="text-xl text-green-700 font-semibold">
-                Giáo viên yoga, YouTuber, và người tin rằng bạn có khả năng hơn những gì bạn nghĩ.
+                HLV Yoga tại Gác Yoga, Bình Định. Đồng hành cùng bạn trên hành trình khám phá yoga.
               </p>
             </div>
 
             <div className="space-y-6 text-gray-700 leading-relaxed">
               <p className="text-lg">
-                Hành trình yoga của tôi bắt đầu trực tuyến gần một thập kỷ trước, và nó đã thay đổi tất cả. 
-                Yoga đã giúp tôi tìm được sức mạnh mà tôi không biết mình có.
+                Tôi tin rằng yoga không chỉ là những tư thế đẹp mắt, mà là cách để chúng ta kết nối với chính mình, 
+                tìm thấy sự cân bằng trong cuộc sống bận rộn.
               </p>
               <p className="text-lg">
-                Bây giờ nhiệm vụ của tôi là giúp những người khác khám phá sức mạnh tương tự trong chính họ. 
-                Nếu bạn đang tìm kiếm câu trả lời, hướng dẫn, và một chút hy vọng - bạn đang ở đúng nơi.
+                Tại Gác Yoga, tôi tạo ra một không gian ấm cúng, thân thiện để mọi người có thể thực hành yoga 
+                một cách thoải mái và hiệu quả nhất.
               </p>
               <p className="text-lg">
-                Tôi đã tạo các chương trình để giúp mọi người ở mọi cấp độ xây dựng sức mạnh, 
-                tính linh hoạt, và sự tự tin trong thực hành của họ.
+                Dù bạn là người mới bắt đầu hay đã có kinh nghiệm, tôi sẽ hướng dẫn bạn tìm được lớp học 
+                phù hợp với nhu cầu và thể trạng của mình.
               </p>
             </div>
 
-            {/* CTA and Stats */}
+            {/* CTA */}
             <div className="space-y-6">
-              <Link href="/course">
+              <a 
+                href="https://zalo.me/your-zalo-number" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 <Button 
                   size="lg"
                   className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  Bắt đầu tại đây
+                  💬 Chat Zalo – Tư vấn lớp phù hợp
                 </Button>
-              </Link>
+              </a>
 
-              {/* Quick stats */}
+              {/* Quick info */}
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
                 <div className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">10+</span>
-                  <span>Năm kinh nghiệm</span>
+                  <span className="text-green-600 font-bold">📍</span>
+                  <span>Gác Yoga, Bình Định</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">10,000+</span>
-                  <span>Học viên</span>
+                  <span className="text-green-600 font-bold">👥</span>
+                  <span>Lớp nhóm nhỏ</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">50+</span>
-                  <span>Chương trình</span>
+                  <span className="text-green-600 font-bold">🏠</span>
+                  <span>Yoga tại nhà</span>
                 </div>
               </div>
-
-              {/* Micro CTA */}
-              <Link 
-                href="/about" 
-                className="inline-flex items-center text-green-600 hover:text-green-700 font-medium transition-colors"
-              >
-                Tìm hiểu thêm về Charlie
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
             </div>
           </div>
         </div>

@@ -8,25 +8,16 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Charlie Follows Yoga - Online Yoga Classes',
-  description: 'Discover yoga program with live coaching. Build strength, flexibility, and mindfulness with Charlie.',
+  title: 'Gác Yoga - HLV Luận - Yoga tại nhà Bình Định',
+  description: 'Yoga cộng đồng, trị liệu, nhóm nhỏ với HLV Luận tại Gác Yoga, Bình Định. Liên hệ Zalo để tư vấn lớp phù hợp.',
   generator: 'v0.app',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/Logo-GacYoga.jpg',
+        type: 'image/jpeg',
       },
     ],
-    apple: '/apple-icon.png',
   },
 }
 
@@ -36,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="vi">
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />

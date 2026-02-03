@@ -15,7 +15,7 @@ export default function Header() {
           <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-green-100 to-orange-100 p-1">
             <Image
               src="/Logo-GacYoga.jpg"
-              alt="Charlie Yoga Logo"
+              alt="Gác Yoga Logo"
               fill
               className="object-contain rounded-full"
               priority
@@ -23,11 +23,11 @@ export default function Header() {
           </div>
           <div>
             <span className="text-lg font-bold text-gray-900 leading-tight">
-              Charlie
+              Gác Yoga
             </span>
             <br />
             <span className="text-sm text-green-600 font-medium">
-              Follows Yoga
+              HLV Luận
             </span>
           </div>
         </Link>
@@ -37,30 +37,31 @@ export default function Header() {
           <Link href="/" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
             Trang chủ
           </Link>
-          <Link href="/course" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
-            Khóa học
+          <Link href="/lop-hoc" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+            Lớp học
           </Link>
-          <Link href="/program" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
-            Chương trình
-          </Link>
-          <Link href="/support" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
-            Hỗ trợ
-          </Link>
-          <Link href="/about" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+          <Link href="/gioi-thieu" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
             Giới thiệu
+          </Link>
+          <Link href="/yoga-journal" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+            Nhật ký
+          </Link>
+          <Link href="/lien-he" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+            Liên hệ
           </Link>
         </nav>
 
-        {/* CTA Buttons */}
-        <div className="hidden md:flex items-center gap-3">
-          <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white rounded-full">
-            Đăng nhập
-          </Button>
-          <Link href="/course">
+        {/* CTA Button */}
+        <div className="hidden md:flex items-center">
+          <a 
+            href="https://zalo.me/your-zalo-number" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             <Button className="bg-green-600 hover:bg-green-700 text-white px-6 rounded-full">
-              Đăng ký
+              💬 Chat Zalo
             </Button>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -72,32 +73,36 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Navigation (Hidden by default - would need state management for toggle) */}
+      {/* Mobile Navigation */}
       {open && (
       <div className="md:hidden border-t border-gray-200 bg-white">
         <nav className="px-4 py-4 space-y-3">
           <Link href="/" className="block text-gray-700 hover:text-green-600 font-medium py-2">
             Trang chủ
           </Link>
-          <Link href="/course" className="block text-gray-700 hover:text-green-600 font-medium py-2">
-            Khóa học
+          <Link href="/lop-hoc" className="block text-gray-700 hover:text-green-600 font-medium py-2">
+            Lớp học
           </Link>
-          <Link href="/program" className="block text-gray-700 hover:text-green-600 font-medium py-2">
-            Chương trình
-          </Link>
-          <Link href="/support" className="block text-gray-700 hover:text-green-600 font-medium py-2">
-            Hỗ trợ
-          </Link>
-          <Link href="/about" className="block text-gray-700 hover:text-green-600 font-medium py-2">
+          <Link href="/gioi-thieu" className="block text-gray-700 hover:text-green-600 font-medium py-2">
             Giới thiệu
           </Link>
-          <div className="pt-4 space-y-2">
-            <Button variant="outline" className="w-full border-green-600 text-green-600 hover:bg-green-600 hover:text-white rounded-full">
-              Đăng nhập
-            </Button>
-            <Button className="w-full bg-green-600 hover:bg-green-700 text-white rounded-full">
-              Đăng ký
-            </Button>
+          <Link href="/yoga-journal" className="block text-gray-700 hover:text-green-600 font-medium py-2">
+            Nhật ký
+          </Link>
+          <Link href="/lien-he" className="block text-gray-700 hover:text-green-600 font-medium py-2">
+            Liên hệ
+          </Link>
+          <div className="pt-4">
+            <a 
+              href="https://zalo.me/your-zalo-number" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <Button className="w-full bg-green-600 hover:bg-green-700 text-white rounded-full">
+                💬 Chat Zalo – Tư vấn lớp phù hợp
+              </Button>
+            </a>
           </div>
         </nav>
       </div>
