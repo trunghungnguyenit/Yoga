@@ -1,67 +1,15 @@
-import Link from 'next/link';
 import { Post } from '@/lib/types/journal';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Clock, Users, Star } from 'lucide-react';
+import { PostLayoutWrapper, PostCtaSection, JournalCta } from '@/components/shared';
+import { Clock } from 'lucide-react';
+import { JOURNAL_SCHEDULE_DATA } from '@/lib/constants/journal-constants';
 
 interface ScheduleLayoutProps {
   post: Post;
 }
 
-const scheduleData = [
-  {
-    day: 'Thứ 2',
-    time: '6:00 - 7:00',
-    class: 'Morning Flow',
-    level: 'Cơ bản',
-    levelColor: 'bg-green-100 text-green-700'
-  },
-  {
-    day: 'Thứ 3',
-    time: '19:00 - 20:00',
-    class: 'Vinyasa Flow',
-    level: 'Trung bình',
-    levelColor: 'bg-orange-100 text-orange-700'
-  },
-  {
-    day: 'Thứ 4',
-    time: '6:00 - 7:00',
-    class: 'Gentle Yoga',
-    level: 'Cơ bản',
-    levelColor: 'bg-green-100 text-green-700'
-  },
-  {
-    day: 'Thứ 5',
-    time: '19:00 - 20:00',
-    class: 'Power Yoga',
-    level: 'Nâng cao',
-    levelColor: 'bg-red-100 text-red-700'
-  },
-  {
-    day: 'Thứ 6',
-    time: '6:00 - 7:00',
-    class: 'Flow & Restore',
-    level: 'Tất cả',
-    levelColor: 'bg-blue-100 text-blue-700'
-  },
-  {
-    day: 'Thứ 7',
-    time: '8:00 - 9:30',
-    class: 'Weekend Special',
-    level: 'Trung bình',
-    levelColor: 'bg-orange-100 text-orange-700'
-  },
-  {
-    day: 'Chủ nhật',
-    time: '8:00 - 9:00',
-    class: 'Restorative Yoga',
-    level: 'Cơ bản',
-    levelColor: 'bg-green-100 text-green-700'
-  }
-];
-
 export default function ScheduleLayout({ post }: ScheduleLayoutProps) {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <PostLayoutWrapper post={post} maxWidth="xl">
       {/* Title */}
       <div className="text-center mb-12">
         <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
@@ -79,9 +27,9 @@ export default function ScheduleLayout({ post }: ScheduleLayoutProps) {
             <span className="text-white text-sm font-bold">!</span>
           </div>
           <div>
-            <h3 className="font-semibold text-orange-800 mb-2">Thông báo quan trọng</h3>
+            <h3 className="font-semibold text-orange-800 mb-2">Lưu ý quan trọng</h3>
             <p className="text-orange-700 text-sm leading-relaxed">
-              Vui lòng đăng ký trước ít nhất 2 giờ để đảm bảo chỗ. Lớp học có thể thay đổi theo điều kiện thời tiết và sức khỏe giảng viên.
+              Lịch có thể thay đổi theo số lượng học viên – vui lòng nhắn Zalo để xác nhận.
             </p>
           </div>
         </div>
@@ -90,7 +38,7 @@ export default function ScheduleLayout({ post }: ScheduleLayoutProps) {
       {/* Schedule Table */}
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
         <div className="bg-green-600 text-white p-6">
-          <h2 className="text-2xl font-bold mb-2">Lịch tập tuần này</h2>
+          <h2 className="text-2xl font-bold mb-2">Lịch tập tuần này tại Gác Yoga</h2>
           <p className="text-green-100">Chọn lớp học phù hợp với trình độ và thời gian của bạn</p>
         </div>
 
@@ -102,12 +50,12 @@ export default function ScheduleLayout({ post }: ScheduleLayoutProps) {
                 <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Thứ</th>
                 <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Giờ</th>
                 <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Lớp học</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Trình độ</th>
-                <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Đăng ký</th>
+                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Phù hợp</th>
+                <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Liên hệ</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
-              {scheduleData.map((item, index) => (
+              {JOURNAL_SCHEDULE_DATA.map((item, index) => (
                 <tr key={index} className="hover:bg-gray-50 transition-colors">
                   <td className="px-6 py-4 text-sm font-medium text-gray-900">{item.day}</td>
                   <td className="px-6 py-4 text-sm text-gray-600 flex items-center gap-1">
@@ -121,9 +69,7 @@ export default function ScheduleLayout({ post }: ScheduleLayoutProps) {
                     </span>
                   </td>
                   <td className="px-6 py-4 text-center">
-                    <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white rounded-full">
-                      Đăng ký
-                    </Button>
+                    <JournalCta category="schedule" size="default" />
                   </td>
                 </tr>
               ))}
@@ -133,7 +79,7 @@ export default function ScheduleLayout({ post }: ScheduleLayoutProps) {
 
         {/* Mobile Cards */}
         <div className="md:hidden p-4 space-y-4">
-          {scheduleData.map((item, index) => (
+          {JOURNAL_SCHEDULE_DATA.map((item, index) => (
             <div key={index} className="bg-gray-50 rounded-xl p-4">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-3">
@@ -149,9 +95,7 @@ export default function ScheduleLayout({ post }: ScheduleLayoutProps) {
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-medium text-gray-900">{item.class}</span>
-                <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white rounded-full">
-                  Đăng ký
-                </Button>
+                <JournalCta category="schedule" size="default" />
               </div>
             </div>
           ))}
@@ -159,34 +103,12 @@ export default function ScheduleLayout({ post }: ScheduleLayoutProps) {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">
-          Không biết chọn lớp nào phù hợp?
-        </h3>
-        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-          Đội ngũ tư vấn của chúng tôi sẽ giúp bạn tìm lớp học phù hợp nhất với trình độ và mục tiêu của bạn.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/course">
-            <Button 
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Đăng ký lớp phù hợp
-              <ArrowRight size={20} className="ml-2" />
-            </Button>
-          </Link>
-          <Link href="/support">
-            <Button 
-              variant="outline"
-              size="lg"
-              className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300"
-            >
-              Tư vấn miễn phí
-            </Button>
-          </Link>
-        </div>
-      </div>
-    </div>
+      <PostCtaSection
+        category={post.category}
+        title="Không biết chọn lớp nào phù hợp?"
+        description="Hãy chat Zalo với Luận để được tư vấn lớp học phù hợp nhất với thể trạng và nhu cầu của bạn."
+        variant="gradient"
+      />
+    </PostLayoutWrapper>
   );
 }

@@ -24,7 +24,7 @@ Successfully transformed the online yoga course platform into a personal yoga in
 - Trang chủ
 - Lớp học
 - Giới thiệu  
-- Nhật ký
+- Tạp chí
 - Liên hệ
 
 ### 3. Page Structure
@@ -38,7 +38,7 @@ Successfully transformed the online yoga course platform into a personal yoga in
 - `/lop-hoc` - Classes page with 4 class types
 - `/gioi-thieu` - About Luận and Gác Yoga
 - `/lien-he` - Contact page with Zalo focus
-- `/yoga-journal` - Updated journal (diary, knowledge, schedule only)
+- `/tap-chi` - Updated journal (diary, knowledge, schedule only)
 
 ### 4. Content Transformation
 

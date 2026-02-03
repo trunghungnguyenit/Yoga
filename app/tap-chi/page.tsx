@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import { JournalHero, JournalFilters, JournalGrid } from '@/components/journal';
+import { JournalHero, JournalFilters, JournalGrid } from '@/components/tap-chi';
 import { mockPosts } from '@/lib/data/journal-posts';
 import { PostCategory } from '@/lib/types/journal';
 
@@ -11,12 +11,13 @@ export default function YogaJournalPage() {
   const [activeFilter, setActiveFilter] = useState<PostCategory | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Filter posts to only show allowed types: diary, knowledge, schedule
+  // Filter posts to only show allowed types: diary, knowledge, schedule, course
   const allowedPosts = useMemo(() => {
     return mockPosts.filter(post => 
       post.category === 'diary' || 
       post.category === 'knowledge' || 
-      post.category === 'schedule'
+      post.category === 'schedule' ||
+      post.category === 'course'
     );
   }, []);
 

@@ -16,7 +16,7 @@ export interface Post {
 
 export const categoryConfig = {
   diary: {
-    label: 'Nhật ký lớp học',
+    label: 'Tạp chí lớp học',
     color: 'bg-green-100 text-green-700',
     bgColor: 'bg-green-50'
   },
