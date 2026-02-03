@@ -43,8 +43,8 @@ export default function Header() {
           <Link href="/gioi-thieu" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
             Giới thiệu
           </Link>
-          <Link href="/yoga-journal" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
-            Nhật ký
+          <Link href="/tap-chi" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+            Tạp chí
           </Link>
           <Link href="/lien-he" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
             Liên hệ
@@ -86,8 +86,8 @@ export default function Header() {
           <Link href="/gioi-thieu" className="block text-gray-700 hover:text-green-600 font-medium py-2">
             Giới thiệu
           </Link>
-          <Link href="/yoga-journal" className="block text-gray-700 hover:text-green-600 font-medium py-2">
-            Nhật ký
+          <Link href="/tap-chi" className="block text-gray-700 hover:text-green-600 font-medium py-2">
+            Tạp chí
           </Link>
           <Link href="/lien-he" className="block text-gray-700 hover:text-green-600 font-medium py-2">
             Liên hệ

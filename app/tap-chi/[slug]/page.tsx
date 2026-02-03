@@ -8,7 +8,7 @@ import {
   KnowledgeLayout, 
   CourseLayout,
   StickyCTA 
-} from '@/components/journal/post-detail';
+} from '@/components/tap-chi/post-detail';
 
 interface PostPageProps {
   params: Promise<{
@@ -49,7 +49,7 @@ export default async function PostPage({ params }: PostPageProps) {
           <nav className="text-sm text-gray-600">
             <a href="/" className="hover:text-green-600">Trang chủ</a>
             <span className="mx-2">/</span>
-            <a href="/yoga-journal" className="hover:text-green-600">Tạp chí Yoga</a>
+            <a href="/tap-chi" className="hover:text-green-600">Tạp chí Yoga</a>
             <span className="mx-2">/</span>
             <span className="text-gray-900">{post.title}</span>
           </nav>

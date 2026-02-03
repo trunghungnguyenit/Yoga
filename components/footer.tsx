@@ -40,8 +40,8 @@ export default function Footer() {
           <Link href="/gioi-thieu" className="text-sm hover:text-accent underline">
             Giới thiệu
           </Link>
-          <Link href="/yoga-journal" className="text-sm hover:text-accent underline">
-            Nhật ký
+          <Link href="/tap-chi" className="text-sm hover:text-accent underline">
+            Tạp chí
           </Link>
         </nav>
 

@@ -4,12 +4,11 @@ import { useState } from 'react';
 import { Post } from '@/lib/types/journal';
 import PostCard from './post-card';
 import { Button } from '@/components/ui/button';
+import { POSTS_PER_PAGE } from '@/lib/constants/journal-constants';
 
 interface JournalGridProps {
   posts: Post[];
 }
-
-const POSTS_PER_PAGE = 6;
 
 export default function JournalGrid({ posts }: JournalGridProps) {
   const [currentPage, setCurrentPage] = useState(1);

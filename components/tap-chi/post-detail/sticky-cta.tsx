@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
+import { JournalCta } from '@/components/shared';
 import { X } from 'lucide-react';
 import { PostCategory } from '@/lib/types/journal';
+import { JOURNAL_STICKY_CTA } from '@/lib/constants/journal-constants';
 
 interface StickyCTAProps {
   category: PostCategory;
@@ -31,6 +32,10 @@ export default function StickyCTA({ category }: StickyCTAProps) {
 
   if (isHidden) return null;
 
+  // Get CTA text based on category
+  const getTitle = () => JOURNAL_STICKY_CTA.titles[category] || 'Bạn phù hợp với lớp này?';
+  const getDescription = () => JOURNAL_STICKY_CTA.descriptions[category] || 'Nhắn Zalo cho Luận để được tư vấn';
+
   return (
     <>
       {/* Desktop Sidebar CTA */}
@@ -50,23 +55,16 @@ export default function StickyCTA({ category }: StickyCTAProps) {
               <span className="text-2xl">🧘‍♀️</span>
             </div>
             <h3 className="font-bold text-gray-900 mb-2">
-              Bạn phù hợp với lớp này?
+              {getTitle()}
             </h3>
             <p className="text-sm text-gray-600 mb-4">
-              Nhắn Zalo cho Luận để được tư vấn trực tiếp
+              {getDescription()}
             </p>
-            <a 
-              href="https://zalo.me/your-zalo-number" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <Button 
-                size="sm"
-                className="w-full bg-green-600 hover:bg-green-700 text-white rounded-full font-semibold"
-              >
-                💬 Chat Zalo
-              </Button>
-            </a>
+            <JournalCta 
+              category={category}
+              size="default"
+              className="w-full text-xs px-3 py-2"
+            />
           </div>
         </div>
       </div>
@@ -78,24 +76,17 @@ export default function StickyCTA({ category }: StickyCTAProps) {
         <div className="flex items-center gap-3">
           <div className="flex-1">
             <p className="text-sm font-medium text-gray-900">
-              Bạn phù hợp với lớp này?
+              {getTitle()}
             </p>
             <p className="text-xs text-gray-600">
-              Nhắn Zalo cho Luận
+              {getDescription()}
             </p>
           </div>
-          <a 
-            href="https://zalo.me/your-zalo-number" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <Button 
-              size="sm"
-              className="bg-green-600 hover:bg-green-700 text-white rounded-full font-semibold px-6"
-            >
-              💬 Chat Zalo
-            </Button>
-          </a>
+          <JournalCta 
+            category={category}
+            size="default"
+            className="text-xs px-4 py-2"
+          />
           <button
             onClick={() => setIsHidden(true)}
             className="text-gray-400 hover:text-gray-600 transition-colors p-1"

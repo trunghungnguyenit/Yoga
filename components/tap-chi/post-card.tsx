@@ -10,8 +10,16 @@ interface PostCardProps {
 export default function PostCard({ post }: PostCardProps) {
   const categoryInfo = categoryConfig[post.category];
   
+  // Determine CTA text based on category
+  const getCtaText = () => {
+    if (post.category === 'course') {
+      return 'Tư vấn lớp phù hợp →';
+    }
+    return 'Xem chi tiết →';
+  };
+  
   return (
-    <Link href={`/yoga-journal/${post.slug}`} className="group block">
+    <Link href={`/tap-chi/${post.slug}`} className="group block">
       <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-gray-200 h-full">
         {/* Thumbnail */}
         <div className="relative aspect-[16/10] overflow-hidden">
@@ -58,7 +66,7 @@ export default function PostCard({ post }: PostCardProps) {
           
           {/* CTA */}
           <div className="flex items-center text-green-600 group-hover:text-green-700 font-medium text-sm">
-            <span>Xem chi tiết</span>
+            <span>{getCtaText()}</span>
             <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>

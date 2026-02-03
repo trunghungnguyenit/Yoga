@@ -1,9 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { Post } from '@/lib/types/journal';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Share2, Facebook } from 'lucide-react';
+import { Share2, Facebook } from 'lucide-react';
 
 interface KnowledgeLayoutProps {
   post: Post;
@@ -98,12 +97,15 @@ export default function KnowledgeLayout({ post }: KnowledgeLayoutProps) {
               Đừng lo lắng! Chúng tôi có lớp học căn bản được thiết kế đặc biệt cho người mới bắt đầu. 
               Bạn sẽ được hướng dẫn từng bước một cách an toàn và hiệu quả.
             </p>
-            <Link href="/course">
+            <a 
+              href="https://zalo.me/your-zalo-number" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full">
-                Đăng ký lớp căn bản
-                <ArrowRight size={16} className="ml-2" />
+                💬 Nhắn Zalo để được Luận tư vấn lớp căn bản phù hợp
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
@@ -133,7 +135,7 @@ export default function KnowledgeLayout({ post }: KnowledgeLayoutProps) {
       <div className="bg-gray-50 rounded-2xl p-8">
         <h3 className="text-xl font-bold text-gray-900 mb-6">Bài viết liên quan</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Link href="/yoga-journal/loi-ich-tho-dung-cach" className="group">
+          <a href="/tap-chi/loi-ich-tho-dung-cach" className="group">
             <div className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow">
               <h4 className="font-semibold text-gray-900 group-hover:text-green-600 mb-2">
                 Lợi ích của việc thở đúng cách trong yoga
@@ -142,8 +144,8 @@ export default function KnowledgeLayout({ post }: KnowledgeLayoutProps) {
                 Khám phá tầm quan trọng của hơi thở trong yoga...
               </p>
             </div>
-          </Link>
-          <Link href="/yoga-journal/buoi-hoc-dau-tien-cua-toi" className="group">
+          </a>
+          <a href="/tap-chi/buoi-hoc-dau-tien-cua-toi" className="group">
             <div className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow">
               <h4 className="font-semibold text-gray-900 group-hover:text-green-600 mb-2">
                 Buổi học đầu tiên của tôi - Cảm xúc và trải nghiệm
@@ -152,7 +154,7 @@ export default function KnowledgeLayout({ post }: KnowledgeLayoutProps) {
                 Chia sẻ những cảm xúc và trải nghiệm đầu tiên...
               </p>
             </div>
-          </Link>
+          </a>
         </div>
       </div>
     </div>
